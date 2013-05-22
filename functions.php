@@ -63,10 +63,8 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  *
  * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
  * @uses register_nav_menus() To add support for navigation menus.
- * @uses add_custom_background() To add support for a custom background.
  * @uses add_editor_style() To style the visual editor.
  * @uses load_theme_textdomain() For translation/localization support.
- * @uses add_custom_image_header() To add support for a custom header.
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
@@ -100,9 +98,6 @@ function twentyten_setup() {
 		'primary' => __( 'Primary Navigation', 'twentyten' ),
 	) );
 
-	// This theme allows users to set a custom background
-	add_custom_background();
-
 	// Your changeable header business starts here
 	if ( ! defined( 'HEADER_TEXTCOLOR' ) )
 		define( 'HEADER_TEXTCOLOR', '' );
@@ -124,10 +119,6 @@ function twentyten_setup() {
 	// Don't support text inside the header image.
 	if ( ! defined( 'NO_HEADER_TEXT' ) )
 		define( 'NO_HEADER_TEXT', true );
-
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See twentyten_admin_header_style(), below.
-	add_custom_image_header( '', 'twentyten_admin_header_style' );
 
 	// ... and thus ends the changeable header business.
 
