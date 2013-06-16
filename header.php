@@ -64,6 +64,30 @@
         $('#dam').attr('href', 'mailto:' + twee)
 
         $("input[placeholder]").placeHeld();
+
+        /* The homepage consists of excerpts from posts on graphical
+           works. The full post can be found by clicking the more...
+           button.
+
+           The most visually appealing part of the homepage are the
+           images that show up for each post. They are clickable.
+           However, they lead to a view showing the image more close 
+           up. Whereas our intention is to have the readers go to
+           to the view with the full post.
+
+           So we have to change these links.
+         */
+        $("body.home .post").each(function() {
+            // establish the link to the post
+            var url = $(this).find(".entry-title a").attr('href');
+            // find the image
+            var img = $(this).find("img").first();
+            // Change the hyperlink of the link wrapping the image
+            // i.e. http://schr.fr/?attachment_id=78 -> http://schr.fr/radio-panik
+            img.parent("a").attr('href', url);
+        });
+
+
         });
         </script>
 <?php        
